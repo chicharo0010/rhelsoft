@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contacto</title>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <style>
+    body {
+      background-color: #E76F51;
+      font-family: Arial, Helvetica, sans-serif;
+      color: #333;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+      text-align: center;
+    }
+    header {
+      background-color: #1F4E79;
+      color: #fff;
+      padding: 20px 0;
+      text-align: center;
+    }
+    header img {
+      display: block;
+      margin: 0 auto;
+    }
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 0;
+      font-weight: bold;
+      background-color: #2C3E50;
+      color: #fff;
+      margin: 0;
+    }
+    nav ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+    nav ul li {
+      display: inline-block;
+      margin: 0 15px;
+    }
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 1.2em;
+    }
+    nav ul li img {
+      vertical-align: middle;
+      margin-right: 5px;
+    }
+    nav a:hover {
+      color: coral;
+    }
+    section {
+      padding: 20px;
+      margin: 20px;
+      background-color: #BFBFBF;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      border-color: orange;
+        border-style: solid;
+        border-radius: 50px;
+    }
+    footer {
+      background-color: #2C3E50;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+      margin: 30px;
+      border-radius: 40px;
+      
+    }
+    footer p {
+      margin: 10px 0;
+    }
+    footer a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 1.2em;
+    }
+    input[type="text"] {
+      width: 80%;
+      padding: 10px;
+      margin: 5px 0;
+      border: none;
+      border-radius: 5px;
+    }
+    input[type="submit"], input[type="reset"], input[type="button"] {
+      padding: 10px 20px;
+      margin: 10px;
+      background-color: #4e5861;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    input[type="submit"]:hover, input[type="reset"]:hover, input[type="button"]:hover {
+      background-color: #333;
+    }
+    footer {
+        background-color: #2C3E50;
+        color: #fff;
+        padding: 20px;
+        text-align: center;
+        margin: 30px;
+        border-radius: 40px;
+      }
+      footer p {
+        margin: 10px 0;
+      }
+      footer a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 1.2em;
+      }
+    footer ul{
+      list-style-type: none; 
+      padding: 0;
+    }
+    footer ul li{
+      display: inline-block; 
+      margin: 0 10px;
+    }
+  </style>
+  <script>
+    function validateForm() {
+      let nombre = document.forms["contactForm"]["nombre"].value;
+      
+      let email = document.forms["contactForm"]["email"].value;
+      
+      let mensaje = document.forms["contactForm"]["mensaje"].value;
+      
+
+      if (nombre == "" || email == ""  || mensaje == "" ) {
+        alert("Todos los campos deben ser llenados");
+        return false;
+      }
+	  const namep = /^[a-zA-ZÀ-ÿ\s]{1,40}$/;
+	  if(!namep.test(nombre)){
+	   alert("Por favor, ingrese corectamente su nombre sin simbolos ni caracteres especiales");
+        return false;
+	  }
+      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailPattern.test(email)) {
+        alert("Por favor, ingrese un correo electrónico válido");
+        return false;
+      }
+
+      return true;
+    }
+  </script>
+</head>
+<body>
+  <header>
+    <nav data-aos="fade-down" data-aos-duration="1000">
+      <ul>
+        <li><a href="index.html">INICIO</a></li>
+        <li><a href="empresa.html">EMPRESA</a></li>
+        <li><a href="aplicaciones.html">APLICACIONES</a></li>
+        <li><a href="terminos.html">TERMINOS Y CONDICIONES</a></li>
+      </ul>
+    </nav>
+    <h2 data-aos="fade-left" data-aos-duration="1000">"Programamos sueños, construimos realidades."</h2>
+    <p data-aos="fade-right" data-aos-duration="1000">Seguimos el principio de facilitar el trabajo a cualquier persona, volviéndolo más cómodo, ágil y veloz</p>
+  </header>
+  <section data-aos="fade-up" data-aos-duration="1000">
+    <h3 data-aos="fade-left" data-aos-duration="1000">CONTACTANOS</h3>
+    <form name="contactForm" action="index.php" method="post" onsubmit="return validateForm()" data-aos="fade-right" data-aos-duration="1000">
+      Asunto: 
+      <select name="asunto">
+        <option value="queja">Queja</option>
+        <option value="sugerencia">Sugerencia</option>
+        <option value="duda">Duda</option>
+      </select> <br> <br>
+      Nombre: <input type="text" name="nombre" /> <br> <br>
+      Correo Electronico: <input type="text" name="email" /> <br> <br>
+      Mensaje: <input type="text" name="mensaje" /> <br> <br>
+      <input type="submit" value="Enviar">
+      <input type="reset" value="Restablecer"> <br> <br>
+    </form>
+  </section>
+  <footer>
+    <p>Derechos reservados 2024 SA de CV</p>
+    <ul>
+      <li>
+        <a href="https://www.instagram.com/r.h.e.l._soft/"><img src="instagram.png" width="30" height="30" alt="Instagram" /> INSTAGRAM</a>
+      </li>
+      <li style="display: inline-block; margin: 0 10px;">
+        <a href="mailto:rhelsoft777@gmail.com"><img src="correo-electronico.png" width="30" height="30" alt="Correo Electrónico" /> </a>CORREO ELECTRONICO
+      </li>
+      
+    </ul>
+  </footer>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+</body>
+</html>
+<!--https://github.com/falconmasters/formulario-css-grid/commit/cf6cd381621cde3dc385d787116cc85a5bd51cca-->

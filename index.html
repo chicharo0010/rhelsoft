@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <title>R.H.E.L SOFT</title>
+    <style>
+      body {
+        background-color:#E76F51;
+        font-family: Arial, Helvetica, sans-serif;
+        color: #333;
+        margin: 0;
+        padding: 0;
+        line-height: 1.6;
+      }
+      header {
+        background-color: #1F4E79;
+        color: #fff;
+        text-align: left;
+        display: flex;
+        align-items: center;
+        padding: 20px;
+        animation: slideDown 1s ease-in-out;
+        margin: 0;
+      }
+      header img {
+        margin-right: 20px;
+        transition: transform 0.3s ease-in-out;
+        border-radius: 20px;
+        border-width: 3px;
+        border-style: solid;
+        border-color:darkcyan;
+      }
+      header img:hover {
+        transform: scale(1.2);
+      }
+      header h2, header p {
+        animation: fadeIn 2s ease-in-out;
+        margin: 0;
+      }
+      nav {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 10px 0;
+        font-weight: bold;
+        background-color: #2C3E50;
+        color: #fff;
+        margin: 0;
+        animation: fadeIn 2s ease-in-out;
+      }
+      nav ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+      }
+      nav ul li {
+        display: inline-block;
+        margin: 0 15px;
+        animation: bounceIn 1.5s ease-in-out;
+      }
+      nav ul li a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 1.2em;
+      }
+      nav a:hover {
+        color: coral;
+      }
+      section {
+        padding: 20px;
+        margin: 20px;
+        background-color: #BFBFBF;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        font-size: 20px;
+        font-weight: bold;
+        animation: fadeIn 1.5s ease-in-out;
+        border-color: orange;
+        border-style: solid;
+        border-radius: 50px;
+      }
+
+      footer {
+        background-color: #2C3E50;
+        color: #fff;
+        padding: 20px;
+        text-align: center;
+        margin: 30px;
+        border-radius: 40px;
+        animation: slideUp 1s ease-in-out;
+      }
+      footer a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 1.2em;
+      }
+      @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+      }
+      @keyframes slideDown {
+        from { transform: translateY(-100%); }
+        to { transform: translateY(0); }
+      }
+      @keyframes slideUp {
+        from { transform: translateY(100%); }
+        to { transform: translateY(0); }
+      }
+      @keyframes bounceIn {
+        from { transform: scale(0.5); }
+        to { transform: scale(1); }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <img src="logodostres.png" alt="R.H.E.L SOFT Logo" width="120">
+      <div >
+        <h2>"Programamos sueños, construimos realidades."</h2>
+        <p>Seguimos el principio de facilitar el trabajo a cualquier persona, volviéndolo más cómodo, ágil y veloz</p>
+      </div>
+    </header>
+    <nav>
+      <ul>
+        <li><a href="empresa.html">EMPRESA</a></li>
+        <li><a href="aplicaciones.html">APLICACIONES</a></li>
+        <li><a href="perfiles.html">CONTACTANOS</a></li>
+        <li><a href="terminos.html">TERMINOS Y CONDICIONES</a></li>
+      </ul>
+    </nav>
+    <section >
+      <h4>SECCION DE CONTENIDO</h4>
+      <p>Este es un sitio web empresarial utilizando HTML 5 y DIVS para la estructura.</p>
+      <p>R.H.E.L SOFT es una empresa dedicada a brindar a los usuarios softwares de calidad que solucionen sus problemáticas, convirtiendo su trabajo en uno más sencillo y eficiente. Nos especializamos en el desarrollo de aplicaciones personalizadas, ajustadas a las necesidades específicas de cada cliente, asegurando una experiencia de usuario óptima y una alta satisfacción.</p>
+      <p>Nuestro equipo está compuesto por profesionales altamente capacitados que están comprometidos con la innovación y la mejora continua. Nos esforzamos por mantenernos a la vanguardia de la tecnología, ofreciendo soluciones que no solo cumplen con los estándares actuales, sino que también anticipan las necesidades futuras de nuestros clientes.</p>
+      <p>En R.H.E.L SOFT, creemos que la tecnología debe ser una herramienta que potencie las capacidades humanas. Por eso, nuestro enfoque se centra en crear software intuitivo y accesible, que permita a las personas y organizaciones maximizar su potencial y alcanzar sus objetivos con mayor rapidez y eficacia.</p>
+    </section>
+    <footer>
+      <a href="terminos.html">Derechos reservados 2024 SA de CV</a>
+    </footer>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+  </body>
+</html>

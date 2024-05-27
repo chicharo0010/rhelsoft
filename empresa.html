@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Empresa</title>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <style>
+      body {
+        background-color:#E76F51;
+        font-family: Arial, Helvetica, sans-serif, Verdana;
+        color: #333;
+        margin: 0;
+        padding: 0;
+        line-height: 1.6;
+      }
+      header {
+        background-color: #1F4E79;
+        color: #fff;
+        text-align: center;
+        padding: 20px 0;
+      }
+      nav {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 10px 0;
+        font-weight: bold;
+        background-color: #2C3E50;
+        color: #fff;
+        margin: 0;
+      }
+      nav ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+      }
+      nav ul li {
+        display: inline-block;
+        margin: 0 15px;
+      }
+      nav ul li a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 1.2em;
+      }
+      nav a:hover {
+        color: coral;
+      }
+      section {
+        padding: 20px;
+        margin: 20px;
+        background-color: #BFBFBF;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        border-color: orange;
+        border-style: solid;
+        border-radius: 50px;
+      }
+      footer {
+        background-color: #2C3E50;
+        color: #fff;
+        padding: 20px;
+        text-align: center;
+        margin: 30px;
+        border-radius: 40px;
+      }
+      footer p {
+        margin: 10px 0;
+      }
+      footer a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 1.2em;
+      }
+      .carousel {
+        display: flex;
+        overflow: hidden;
+        width: 80px;
+		
+        margin: 0 auto;
+      }
+      .carousel img {
+        min-width: 100%;
+        transition: transform 0.5s ease;
+      }
+      .carousel-buttons {
+        text-align: center;
+        margin-top: 10px;
+      }
+      .carousel-buttons button {
+        padding: 10px;
+        margin: 5px;
+        background-color: #333;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+      }
+      .carousel-buttons button:hover {
+        background-color: coral;
+      }@keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+      }
+      @keyframes slideUp {
+        from { transform: translateY(100%); }
+        to { transform: translateY(0); }
+      }
+      @keyframes fadeInDown {
+        from { opacity: 0; transform: translateY(-50px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      @keyframes fadeInUp {
+        from { opacity: 0; transform: translateY(50px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      @keyframes slideIn {
+        from { transform: translateX(-100%); }
+        to { transform: translateX(0); }
+      }
+        
+      
+    </style>
+        <script>
+          let currentSlide = 0;
+    
+          function showSlide(index) {
+            const slides = document.querySelectorAll('.carousel img');
+            if (index >= slides.length) {
+              currentSlide = 0;
+            } else if (index < 0) {
+              currentSlide = slides.length - 1;
+            } else {
+              currentSlide = index;
+            }
+            slides.forEach((slide, i) => {
+              slide.style.transform = `translateX(${-currentSlide * 100}%)`;
+            });
+          }
+    
+          function prevSlide() {
+            showSlide(currentSlide - 1);
+          }
+    
+          function nextSlide() {
+            showSlide(currentSlide + 1);
+          }
+    
+          document.addEventListener('DOMContentLoaded', () => {
+            showSlide(currentSlide);
+          });
+        </script>
+  </head>
+  <body>
+    <header>
+      <h1>R.H.E.L SOFT</h1>
+      <nav>
+        <ul>
+          <li><a href="index.html">INICIO</a></li>
+          <li><a href="aplicaciones.html">APLICACIONES</a></li>
+          <li><a href="perfiles.html">CONTACTANOS</a></li>
+          <li><a href="terminos.html">TERMINOS Y CONDICIONES</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section data-aos="fade-up" data-aos-duration="1000">
+      <h2 data-aos="fade-right" data-aos-duration="1000">INTRODUCCIÓN A LA EMPRESA</h2>
+      <p data-aos="fade-left" data-aos-duration="1000">
+        Nuestra misión es ser una empresa completamente segura con integrantes comprometidos, seguridad y respeto para cada uno; pero estamos muy comprometidos a dar el mejor resultado para nuestro proyecto, con una herramienta fácil, útil y eficaz para poder usar en el campo laboral. Desarrollar softwares útiles dentro de los aspectos necesarios.
+      </p>
+    </section>
+
+    <section data-aos="fade-up" data-aos-duration="1000">
+      <h2 data-aos="fade-right" data-aos-duration="1000">INTEGRANTES DE LA EMPRESA</h2>
+      <table width="100%" align="center">
+        <tr>
+          <td rowspan="3">HERNANDEZ HERNANDEZ CESAR
+          <a href="https://www.instagram.com/53x4r?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==">
+            <img src="instagram.png" width="20" height="20"></a>
+          </td>
+          <td>Programador <img src="programador.png" width="20" height="20" /></td>
+        </tr>
+        <tr>
+          <td>Marketing <img src="publicidad.png" width="30" height="30" /></td>
+        </tr>
+        <tr>
+          <td>Documentador <img src="documentos.png" width="30" height="30" /></td>
+        </tr>
+        <tr>
+          <td rowspan="3">ESQUIVEL ZARATE LEONARDO
+          <a href="https://www.instagram.com/rager_342?igsh=bmpybXhxYTc0MWJk">
+            <img src="instagram.png" width="20" height="20"></a>
+          </td>
+          <td>Programador <img src="programador.png" width="20" height="20" /></td>
+        </tr>
+        <tr>
+          <td>Diseñador <img src="diseno-grafico.png" width="30" height="30" /></td>
+        </tr>
+        <tr>
+          <td>Documentador <img src="documentos.png" width="30" height="30" /></td>
+        </tr>
+        <tr>
+          <td rowspan="3">LOPEZ GARCIA MIGUEL ANGEL
+          <a href="https://www.instagram.com/miguel_log98?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==">
+            <img src="instagram.png" width="20" height="20"></a>
+          </td>
+          <td>Programador <img src="programador.png" width="20" height="20" /></td>
+        </tr>
+        <tr>
+          <td>Lider del equipo <img src="capitan-del-equipo.png" width="30" height="30" /></td>
+        </tr>
+        <tr>
+          <td>Documentador <img src="documentos.png" width="30" height="30" /></td>
+        </tr>
+        <tr>
+          <td rowspan="3">Rueda Gutierrez Adrian Everardo
+          <a href="https://www.instagram.com/adri_is_eve?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==">
+            <img src="instagram.png" width="20" height="20"></a>
+          </td>
+          <td>Programador <img src="programador.png" width="20" height="20" /></td>
+        </tr>
+        <tr>
+          <td>Diseñador <img src="diseno-grafico.png" width="30" height="30" /></td>
+        </tr>
+        <tr>
+          <td>Documentador <img src="documentos.png" width="30" height="30" /></td>
+        </tr>
+      </table>
+    </section>
+
+    <section data-aos="fade-up" data-aos-duration="1000">
+      <h2 data-aos="fade-right" data-aos-duration="1000"> INTEGRANTES - IMÁGENES</h2>
+      <div class="carousel" id="carousel" data-aos="fade-right"
+      data-aos-offset="300"
+      data-aos-easing="ease-in-sine" data-aos-duration="1000">
+        <img src="Esquivel.jpg" alt="Esquivel">
+        <img src="Miguel.jpg" alt="Miguel">
+        <img src="Malote.jpg" alt="Malote">
+        <img src="cesarmiamorpechocho.png" alt="Cesar">
+      </div>
+      <div class="carousel-buttons">
+        <button onclick="prevSlide()">Anterior</button>
+        <button onclick="nextSlide()">Siguiente</button>
+      </div>
+    </section>
+
+    <section data-aos="fade-up" data-aos-duration="1000" >
+      <h2 data-aos="fade-right" data-aos-duration="1000">Objetivos:</h2>
+      <ul>
+        <li>Brindar a los usuarios softwares de calidad que solucionen sus problemáticas, convirtiendo su trabajo en uno más sencillo gracias a los softwares.</li>
+        <li>Que nuestra empresa se convierta en una de alto estándar de calidad reconocido nacional e internacionalmente, destacado por el esfuerzo de cada integrante.</li>
+        <li>Ser una empresa que aliente tanto a los integrantes proporcionando un ambiente de respeto, seguridad y cómodo; pero también a los clientes proporcionando softwares de calidad, útiles y fáciles de usar para su beneficio propio, básicamente un ganar y ganar de ambas partes.</li>
+        <li>Apoyar a los clientes volviendo sus actividades más fáciles de realizar y así ofreciendo una motivación a ellos de ocupar nuestros softwares.</li>
+      </ul>
+      
+<h2>Visión:</h2>
+<ul><li>
+Ser reconocidos como líderes en el desarrollo de software a nivel global, destacando por nuestra excelencia en la entrega de productos y servicios que superan las expectativas de nuestros clientes. Queremos ser el socio tecnológico preferido por empresas que buscan soluciones de vanguardia y confiables.
+</li></ul>
+<h2>Valores:</h2>
+<ul><li>
+Calidad: Nos esforzamos por ofrecer productos y servicios de la más alta calidad, garantizando la satisfacción y confianza de nuestros clientes.
+</li><li>
+Innovación: Buscamos constantemente nuevas ideas y tecnologías para mejorar nuestros productos y procesos, manteniéndonos a la vanguardia del desarrollo tecnológico.
+</li><li>
+Colaboración: Fomentamos un ambiente de trabajo colaborativo donde el intercambio de ideas y el trabajo en equipo son fundamentales para lograr resultados excepcionales.
+</li><li>
+Ética: Actuamos con integridad, transparencia y ética en todas nuestras relaciones comerciales y decisiones empresariales.
+</li><li>
+Compromiso: Estamos comprometidos con el éxito de nuestros clientes, brindándoles soluciones personalizadas y un soporte excepcional durante todo el ciclo de vida del proyecto.
+</li><li>
+Responsabilidad Social: Contribuimos al desarrollo sostenible de la sociedad y el medio ambiente, promoviendo prácticas empresariales responsables y sostenibles.
+</li></ul>    
+
+</section>
+<!--
+    <center>
+      <a href="index.html"><font face="Arial" size="5">REGRESAR</font></a>
+    </center>
+-->
+    <footer >
+      <p>Derechos reservados 2024 SA de CV</p>
+    </footer>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aplicaciones</title>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+      body {
+        background-color: #E76F51;
+        font-family: Arial, Helvetica, sans-serif;
+        color: #333;
+        margin: 0;
+        padding: 0;
+        line-height: 1.6;
+      }
+      header {
+        background-color: #1F4E79;
+        color: #fff;
+        text-align: center;
+        padding: 20px 0;
+        animation: fadeInDown 1s ease-in-out;
+      }
+      nav {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 10px 0;
+        font-weight: bold;
+        background-color: #2C3E50;
+        color: #fff;
+        margin: 0;
+        animation: fadeInUp 1s ease-in-out;
+      }
+      nav ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+      }
+      nav ul li {
+        display: inline-block;
+        margin: 0 15px;
+      }
+      nav ul li a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 1.2em;
+      }
+      nav a:hover {
+        color: coral;
+      }
+      section {
+        text-align: justify;
+        padding: 20px;
+        margin: 20px;
+        background-color: #bfbfbf;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: 22px;
+        animation: fadeIn 1.5s ease-in-out;
+        border-color: orange;
+        border-style: solid;
+        border-radius: 50px;
+      }
+      section img{
+        margin-right: 20px;
+        transition: transform 0.3s ease-in-out;
+        border-radius: 20px;
+        border-width: 3px;
+        border-style: solid;
+        border-color:darkcyan;
+      }
+      section img:hover{
+        transform: scale(1.2);
+      }
+      .content-container {
+        display: flex;
+        align-items: flex-start;
+        text-align: justify;
+      }
+      .content-container img {
+        margin-right: 20px;
+        width: 160px;
+        height: 165px;
+      }
+      footer {
+        background-color: #2C3E50;
+        color: #fff;
+        padding: 20px;
+        text-align: center;
+        margin: 30px;
+        border-radius: 40px;
+        animation: slideUp 1s ease-in-out;
+      }
+      footer p {
+        margin: 10px 0;
+      }
+      footer a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 1.2em;
+      }
+      .carousel {
+        display: flex;
+        overflow: hidden;
+        width: 600px;
+        margin: 0 auto;
+        animation: slideIn 2s ease-in-out;
+      }
+      .carousel img {
+        min-width: 100%;
+        transition: transform 0.5s ease;
+      }
+      .carousel-buttons {
+        text-align: center;
+        margin-top: 10px;
+      }
+      .carousel-buttons button {
+        padding: 10px;
+        margin: 5px;
+        background-color: #333;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+        animation: fadeIn 1.5s ease-in-out;
+      }
+      .carousel-buttons button:hover {
+        background-color: coral;
+      }
+      @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+      }
+      @keyframes slideUp {
+        from { transform: translateY(100%); }
+        to { transform: translateY(0); }
+      }
+      @keyframes fadeInDown {
+        from { opacity: 0; transform: translateY(-50px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      @keyframes fadeInUp {
+        from { opacity: 0; transform: translateY(50px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      @keyframes slideIn {
+        from { transform: translateX(-100%); }
+        to { transform: translateX(0); }
+      }
+      @keyframes show {
+        from{
+          opacity: 0;
+          scale: 25%;
+        }to{
+          opacity: 1;
+          scale: 100%;
+        }
+        img{
+          view-timeline-name: --image;
+          view-timeline-axis: block;
+          animation-timeline: --image;
+          animation-name: show;
+          animation-range: entry 25% cover 30%;
+          animation-fill-mode: both;
+           
+        }
+      }
+    </style>
+    <script>
+      let currentSlide = 0;
+
+      function showSlide(index) {
+        const slides = document.querySelectorAll('.carousel img');
+        if (index >= slides.length) {
+          currentSlide = 0;
+        } else if (index < 0) {
+          currentSlide = slides.length - 1;
+        } else {
+          currentSlide = index;
+        }
+        slides.forEach((slide, i) => {
+          slide.style.transform = `translateX(${-currentSlide * 100}%)`;
+        });
+      }
+
+      function prevSlide() {
+        showSlide(currentSlide - 1);
+      }
+
+      function nextSlide() {
+        showSlide(currentSlide + 1);
+      }
+
+      document.addEventListener('DOMContentLoaded', () => {
+        showSlide(currentSlide);
+      });
+    </script>
+  </head>
+  <body>
+    <header>
+      <h1>APLICACIONES</h1>
+    </header>
+    <nav>
+      <ul>
+        <li><a href="index.html">INICIO</a></li>
+        <li><a href="empresa.html">EMPRESA</a></li>
+        <li><a href="perfiles.html">CONTACTANOS</a></li>
+        <li><a href="terminos.html">TERMINOS Y CONDICIONES</a></li>
+      </ul>
+    </nav>
+    <section>
+      <h2>MECH RECORD</h2>
+      <div class="content-container" data-aos="flip-right">
+        <img src="logotipo.png" alt="Mech Record Logo" />
+        <div>
+          <p>
+            Mech Record es un proyecto que dadas sus opciones y posibilidades ayudaría a un taller mecánico. Su principal propósito es funcionar como un software en el que se pueda registrar a los clientes con el nombre de estos. El cliente guardaría un usuario en el que se dará seguimiento al paso del vehículo por el taller mecánico. Se registraría el tipo de auto que entraría para inspeccionar o reparar, y el que se compró o se solicitó para repararlo, desde piezas hasta materiales.
+          </p>
+          <p>
+            Estos datos se guardarían en el usuario anteriormente hecho por el cliente y las compras de materiales o gastos en reparaciones se guardarán dentro del usuario en una deuda. El cliente la podría pagar a tiempo, pero si ocurre lo contrario y el cliente sigue solicitando materiales o reparaciones, la deuda aumentaría con los precios de lo solicitado, guardando en su usuario la deuda. En el usuario que el cliente guardara al principio estarán indicados tanto el tipo de carro, el costo en materiales y las deudas pagadas o atrasadas para dar un seguimiento.
+          </p>
+          <p>
+            Facilitaría bastante el trabajo dentro de los talleres mecánicos por los puntos anteriormente dados, haciendo más fácil el buscar ciertos aspectos de un cliente en específico como sus deudas pagadas o atrasadas, y también los automóviles que ingresa al taller.
+          </p>
+          <p>
+            Actualmente nuestro proyecto sigue en desarrollo por favor vuelve pronto para ser de los primeros en probarlo.
+          </p>
+        </div>
+      </div>
+      <p><b>Pero aquí tienes una vista previa:</b></p>
+      <div class="carousel" id="carousel" data-aos="flip-right">
+        <img src="inicio_s.png" alt="inicio_s">
+        <img src="registro_s.png" alt="registro_s">
+        <img src="menu.png" alt="menu">
+        <img src="regsit.png" alt="regsit">
+        <img src="consult.png" alt="consult">
+      </div>
+      <div class="carousel-buttons">
+        <button onclick="prevSlide()">Anterior</button>
+        <button onclick="nextSlide()">Siguiente</button>
+      </div>
+    </section>
+    <footer>
+      <p>Derechos reservados 2024 SA de CV</p>
+      <p align="right"><a href="perfiles.html">Contáctanos</a></p>
+    </footer>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+  </body>
+</html>
